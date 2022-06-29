@@ -1,13 +1,27 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Timer from './components/Timer';
 import Button from './components/ui/Button';
 import Input, { InputTypes } from './components/ui/Input';
 import Modal from './components/ui/Modal';
 
+export enum timerFallbackNames {
+	EVENT = 'названия события',
+	DATE = '1970-01-01T00:00',
+}
+
 export default function App() {
 	const [modal, setModal] = useState<boolean>(false);
-	const [event, setEvent] = useState<string>('открытия макдака');
-	const [date, setDate] = useState<string>('2022-06-29T21:19');
+	const [event, setEvent] = useState<string>(
+		localStorage.getItem('event') || timerFallbackNames.EVENT
+	);
+	const [date, setDate] = useState<string>(
+		localStorage.getItem('date') || timerFallbackNames.DATE
+	);
+
+	useEffect(() => {
+		localStorage.setItem('event', event || timerFallbackNames.EVENT);
+		localStorage.setItem('date', date || timerFallbackNames.DATE);
+	}, [event, date]);
 
 	return (
 		<div className='container max-w-xl'>
