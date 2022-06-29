@@ -26,7 +26,7 @@ export default function App() {
 	return (
 		<div className='container max-w-xl'>
 			<Modal
-				title='Редактировать таймер'
+				title='Обновить таймер'
 				active={modal}
 				onClose={() => setModal(false)}
 			>
