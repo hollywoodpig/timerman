@@ -13,8 +13,6 @@ export default function Timer({ onFinish, event, date }: TimerInfoInterface) {
 	const [seconds, setSeconds] = useState<number>(0);
 	const [finished, setFinished] = useState<boolean>(false);
 
-	console.log('rerender');
-
 	const tick = () => {
 		const elapsed = Date.parse(date) - Date.now();
 		const days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
