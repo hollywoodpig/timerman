@@ -9,7 +9,3 @@ const root = ReactDOM.createRoot(
 root.render(<App />);
 
 serviceWorkerRegistration.register();
-
-window.addEventListener('beforeinstallprompt', function (e) {
-	console.log(123);
-});
