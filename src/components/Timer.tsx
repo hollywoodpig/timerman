@@ -53,7 +53,7 @@ export default function Timer({ onFinish, event, date }: TimerInfoInterface) {
 			<div className='divide-y divide-slate-200'>
 				<div className='py-3'>{days} дней</div>
 				<div className='py-3'>{hours} часов</div>
-				<div className='py-3'>{minutes} минуты</div>
+				<div className='py-3'>{minutes} минут</div>
 				<div className='py-3'>{seconds} секунд</div>
 			</div>
 		</>
