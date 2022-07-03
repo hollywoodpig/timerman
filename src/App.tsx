@@ -49,7 +49,11 @@ export default function App() {
 				/>
 			</Modal>
 			<div className='flex flex-col min-h-screen pt-8 pb-4'>
-				<Timer onFinish={() => setModal(true)} event={event} date={date} />
+				<Timer
+					onFinish={() => setModal(true)}
+					event={event || timerFallbackNames.EVENT}
+					date={date}
+				/>
 				<Button classes='mt-auto self-center' onClick={() => setModal(true)}>
 					Изменить
 				</Button>
